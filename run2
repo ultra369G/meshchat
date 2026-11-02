@@ -1,0 +1,33 @@
+# 1. Kill any running processes
+pkill -f nodemon
+pkill -f react-scripts
+
+# 2. Fix database permissions
+cd ~/Downloads/2027/messaging\ app/meshchat/backend
+rm -f database/meshchat.db
+mkdir -p database
+chmod 755 database
+touch database/meshchat.db
+chmod 666 database/meshchat.db
+
+# 3. Seed the database
+npm run seed
+
+# 4. Start backend
+npm run dev
+
+# 5. In a new terminal, start frontend
+cd ~/Downloads/2027/messaging\ app/meshchat/frontend
+npm start
+
+# 6. Test the application
+# - Open http://localhost:3000 in Chrome
+# - Open http://localhost:3000 in Incognito
+# - Register two different users
+# - Both should see each other online
+# - Click on user to chat
+# - Send messages, images, files
+# - Create a group and add members
+# - Test calls between users
+# - Click on profile picture to edit profile
+# - Change avatar color or upload image

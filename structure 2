@@ -1,0 +1,74 @@
+meshchat/
+├── backend/
+│   ├── src/
+│   │   ├── index.js
+│   │   ├── server.js
+│   │   ├── socket/
+│   │   │   └── index.js
+│   │   ├── routes/
+│   │   │   ├── auth.js
+│   │   │   └── users.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   └── Message.js
+│   │   ├── middleware/
+│   │   │   └── auth.js
+│   │   ├── utils/
+│   │   │   ├── encryption.js
+│   │   │   ├── broadcast.js
+│   │   │   └── seed.js
+│   │   └── database/
+│   │       └── index.js
+│   ├── package.json
+│   └── .env
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.js
+│   │   │   │   └── Register.js
+│   │   │   ├── Chat/
+│   │   │   │   ├── ChatWindow.js
+│   │   │   │   ├── MessageInput.js
+│   │   │   │   └── MessageBubble.js
+│   │   │   ├── Users/
+│   │   │   │   ├── OnlineUsers.js
+│   │   │   │   └── UserAvatar.js
+│   │   │   ├── Group/
+│   │   │   │   ├── GroupChat.js
+│   │   │   │   └── CreateGroup.js
+│   │   │   └── Calls/
+│   │   │       ├── CallScreen.js
+│   │   │       └── IncomingCall.js
+│   │   ├── context/
+│   │   │   ├── AuthContext.js
+│   │   │   └── SocketContext.js
+│   │   ├── utils/
+│   │   │   ├── encryption.js
+│   │   │   └── storage.js
+│   │   └── styles/
+│   │       ├── App.css
+│   │       ├── Auth.css
+│   │       ├── ChatWindow.css
+│   │       ├── MessageInput.css
+│   │       ├── MessageBubble.css
+│   │       ├── OnlineUsers.css
+│   │       ├── UserAvatar.css
+│   │       ├── CreateGroup.css
+│   │       └── CallScreen.css
+│   ├── package.json
+│   └── .env
+├── docker/
+│   ├── Dockerfile.backend
+│   ├── Dockerfile.frontend
+│   ├── docker-compose.yml
+│   └── nginx.conf
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+└── README.md

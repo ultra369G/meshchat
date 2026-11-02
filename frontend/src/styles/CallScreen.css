@@ -1,0 +1,429 @@
+.call-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  position: relative;
+  color: white;
+}
+
+.call-screen.rejected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+}
+
+.encryption-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 20;
+  font-size: 12px;
+  color: white;
+}
+
+.encryption-badge .encrypted {
+  color: #4caf50;
+}
+
+.encryption-badge .unencrypted {
+  color: #ff9800;
+}
+
+.videos-container {
+  flex: 1;
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.local-video {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #4caf50;
+  z-index: 10;
+  background: #2a2a2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.remote-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.call-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  border-radius: 30px;
+  min-width: 280px;
+}
+
+.call-info h2 {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.call-status {
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.volume-meter {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.volume-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 30px;
+}
+
+.volume-bar {
+  width: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.1s ease;
+  border-radius: 2px;
+}
+
+.volume-bar.active {
+  background: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+.volume-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.call-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  z-index: 20;
+}
+
+.control-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.control-button.active {
+  background: #f44336;
+  color: white;
+}
+
+.control-button.end-call {
+  background: #f44336;
+  transform: rotate(135deg);
+}
+
+.control-button.end-call:hover {
+  background: #d32f2f;
+  transform: rotate(135deg) scale(1.05);
+}
+
+.back-button-call {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.back-button-call:hover {
+  background: #45a049;
+}
+
+@media (max-width: 768px) {
+  .local-video {
+    width: 120px;
+    height: 90px;
+    bottom: 100px;
+  }
+  
+  .call-controls {
+    gap: 15px;
+    padding: 12px 20px;
+  }
+  
+  .control-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .call-info {
+    padding: 15px 30px;
+    min-width: 240px;
+  }
+  
+  .call-info h2 {
+    font-size: 20px;
+  }
+}
+.call-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  position: relative;
+  color: white;
+}
+
+.videos-container {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.local-video {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  z-index: 10;
+  background: #2a2a2a;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.local-video:hover {
+  transform: scale(1.02);
+}
+
+.remote-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.call-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.call-info h2 {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.call-status {
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.call-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.control-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.control-button.active {
+  background: var(--danger-color);
+}
+
+.control-button.active:hover {
+  background: #d32f2f;
+}
+
+.control-button.end-call {
+  background: var(--danger-color);
+}
+
+.control-button.end-call:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+.incoming-call-actions {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 20;
+}
+
+.answer-button {
+  padding: 12px 30px;
+  background: var(--success-color);
+  color: white;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.answer-button:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.reject-button {
+  padding: 12px 30px;
+  background: var(--danger-color);
+  color: white;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.reject-button:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.incoming-call-actions {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .local-video {
+    width: 120px;
+    height: 90px;
+    bottom: 100px;
+  }
+  
+  .call-controls {
+    gap: 15px;
+    padding: 12px 20px;
+  }
+  
+  .control-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .call-info {
+    padding: 15px 30px;
+  }
+  
+  .call-info h2 {
+    font-size: 20px;
+  }
+  
+  .answer-button, .reject-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

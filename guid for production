@@ -1,0 +1,19 @@
+# Build the application for production
+cd backend
+npm run build  # If you have build script
+
+cd ../frontend
+npm run build
+
+# The build files will be in:
+# backend/dist/ - Backend production files
+# frontend/build/ - Frontend static files
+
+# To serve the production build:
+# Backend
+cd backend
+NODE_ENV=production npm start
+
+# Frontend (serve static files)
+cd frontend/build
+npx serve -s . -p 3000

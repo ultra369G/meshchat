@@ -1,0 +1,61 @@
+# Backend
+cd backend
+npm install sqlite3 sqlite bcryptjs jsonwebtoken cors dotenv multer uuid crypto node-rsa express-rate-limit helmet compression
+
+# Frontend
+cd ../frontend
+npm install crypto-js
+npm install simple-peer
+npm install emoji-picker-react
+npm install react-dropzone
+npm install react-icons
+npm install react-toastify
+npm install date-fns
+
+# 1. Clone or download the project
+git clone <repository-url>
+cd meshchat
+
+# 2. Install Backend Dependencies
+cd backend
+npm install
+
+# 3. Install Frontend Dependencies
+cd ../frontend
+npm install
+
+# 4. Create Environment Files
+# In backend folder, create .env file:
+cat > backend/.env << EOF
+PORT=5000
+JWT_SECRET=your-super-secret-key-change-this
+NODE_ENV=development
+DB_PATH=./database/meshchat.db
+ENCRYPTION_KEY=32-character-encryption-key-here
+BCRYPT_ROUNDS=10
+MAX_FILE_SIZE=10485760
+MESSAGE_EXPIRY=86400000
+CORS_ORIGIN=http://localhost:3000
+EOF
+
+# In frontend folder, create .env file:
+cat > frontend/.env << EOF
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_SOCKET_URL=http://localhost:5000
+REACT_APP_BROADCAST_PORT=5555
+EOF
+
+# 5. Initialize Database
+cd ../backend
+npm run seed
+
+# 6. Start the Application
+# Terminal 1 - Backend
+npm run dev
+
+# Terminal 2 - Frontend
+cd ../frontend
+npm start
+
+# 7. Access the App
+# Open browser and go to: http://localhost:3000

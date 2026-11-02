@@ -1,0 +1,281 @@
+.group-chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-chat);
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.group-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.group-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.group-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.group-avatar-placeholder {
+  color: white;
+  font-size: 20px;
+}
+
+.group-details h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.group-details p {
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+.group-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.group-actions .action-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-gray);
+  font-size: 18px;
+}
+
+.group-actions .action-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.group-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.members-sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--bg-light);
+  transform: translateX(100%);
+  transition: transform 0.2s;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.members-sidebar.open {
+  transform: translateX(0);
+}
+
+.members-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.members-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.members-header button {
+  color: var(--text-gray);
+  font-size: 20px;
+}
+
+.members-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-info h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.member-info p {
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--whatsapp-green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.admin-badge {
+  font-size: 10px;
+  background: var(--whatsapp-green);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.messages-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message-wrapper {
+  margin-bottom: 8px;
+}
+
+.message-sender-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+  padding-left: 8px;
+}
+
+.sender-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.message-time {
+  font-size: 10px;
+  color: var(--text-gray);
+}
+
+.message-bubble {
+  max-width: 65%;
+  padding: 8px 12px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message-bubble.other {
+  background: var(--message-in);
+  border-top-left-radius: 4px;
+}
+
+.message-bubble.own {
+  background: var(--message-out);
+  border-top-right-radius: 4px;
+  margin-left: auto;
+}
+
+.message-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message-image {
+  max-width: 250px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.message-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37, 211, 102, 0.1);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.file-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.no-messages {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-gray);
+}
+
+.typing-indicator {
+  padding: 8px 12px;
+  color: var(--text-gray);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .members-sidebar {
+    width: 100%;
+  }
+  
+  .message-bubble {
+    max-width: 85%;
+  }
+  
+  .message-image {
+    max-width: 200px;
+  }
+}
